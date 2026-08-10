@@ -1,5 +1,5 @@
 -- ============================================================
--- PROJECT: Online Retail Store Database
+-- PROJECT: Retail Store Database
 -- FILE: 02_sample_data.sql
 -- PURPOSE: Populates all tables with realistic sample data
 -- RUN AFTER: 01_schema.sql
