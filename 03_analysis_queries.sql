@@ -1,5 +1,5 @@
 -- ============================================================
--- PROJECT: Online Retail Store Database
+-- PROJECT: Retail Store Database
 -- FILE: 03_analysis_queries.sql
 -- PURPOSE: A curated set of business questions answered with SQL,
 --          ordered from basic to advanced. Great for explaining
