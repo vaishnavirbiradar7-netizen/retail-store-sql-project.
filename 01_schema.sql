@@ -1,5 +1,5 @@
 -- ============================================================
--- PROJECT: Online Retail Store Database
+-- PROJECT: Retail Store Database
 -- FILE: 01_schema.sql
 -- PURPOSE: Creates all tables, primary keys, foreign keys
 -- COMPATIBLE WITH: MySQL 8+ (minor tweaks needed for PostgreSQL,
