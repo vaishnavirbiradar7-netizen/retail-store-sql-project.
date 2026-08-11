@@ -1,22 +1,13 @@
--- ============================================================
--- PROJECT: Retail Store Database
--- FILE: 02_sample_data.sql
--- PURPOSE: Populates all tables with realistic sample data
--- RUN AFTER: 01_schema.sql
--- ============================================================
-
 USE retail_store;
 
--- ------------------------------------------------------------
 -- categories
--- ------------------------------------------------------------
+
 INSERT INTO categories (category_name) VALUES
 ('Electronics'), ('Clothing'), ('Home & Kitchen'), ('Books'),
 ('Sports & Fitness'), ('Beauty & Personal Care'), ('Toys'), ('Groceries');
 
--- ------------------------------------------------------------
 -- products
--- ------------------------------------------------------------
+
 INSERT INTO products (product_name, category_id, price, stock_quantity) VALUES
 ('Wireless Mouse',        1, 599.00,  120),
 ('Bluetooth Headphones',  1, 1999.00,  75),
@@ -39,9 +30,8 @@ INSERT INTO products (product_name, category_id, price, stock_quantity) VALUES
 ('Organic Basmati Rice 5kg', 8, 649.00, 90),
 ('Assorted Nuts Pack',    8, 449.00,  130);
 
--- ------------------------------------------------------------
 -- customers
--- ------------------------------------------------------------
+
 INSERT INTO customers (first_name, last_name, email, city, signup_date) VALUES
 ('Aarav',   'Sharma',   'aarav.sharma@example.com',   'Bengaluru', '2024-01-15'),
 ('Priya',   'Menon',    'priya.menon@example.com',    'Chennai',   '2024-02-02'),
@@ -59,18 +49,16 @@ INSERT INTO customers (first_name, last_name, email, city, signup_date) VALUES
 ('Neha',    'Desai',    'neha.desai@example.com',     'Ahmedabad', '2024-08-25'),
 ('Rahul',   'Bose',     'rahul.bose@example.com',     'Kolkata',   '2024-09-10');
 
--- ------------------------------------------------------------
 -- employees
--- ------------------------------------------------------------
+
 INSERT INTO employees (full_name, role, hire_date) VALUES
 ('Sunita Rao',    'Sales Associate',  '2022-06-01'),
 ('Manoj Tiwari',  'Sales Associate',  '2022-11-15'),
 ('Farah Khan',    'Order Manager',    '2023-02-20'),
 ('Vishal Anand',  'Sales Associate',  '2023-08-10');
 
--- ------------------------------------------------------------
 -- orders
--- ------------------------------------------------------------
+
 INSERT INTO orders (customer_id, employee_id, order_date, status) VALUES
 (1,  1, '2024-06-01', 'Delivered'),
 (2,  2, '2024-06-03', 'Delivered'),
@@ -103,10 +91,9 @@ INSERT INTO orders (customer_id, employee_id, order_date, status) VALUES
 (13, 4, '2024-08-08', 'Delivered'),
 (3,  2, '2024-08-09', 'Delivered');
 
--- ------------------------------------------------------------
 -- order_items
 -- (unit_price copied from products at time of "sale")
--- ------------------------------------------------------------
+
 INSERT INTO order_items (order_id, product_id, quantity, unit_price) VALUES
 (1, 1, 2, 599.00), (1, 4, 1, 199.00),
 (2, 5, 3, 449.00),
