@@ -1,26 +1,16 @@
--- ============================================================
--- PROJECT: Retail Store Database
--- FILE: 01_schema.sql
--- PURPOSE: Creates all tables, primary keys, foreign keys
--- COMPATIBLE WITH: MySQL 8+ (minor tweaks needed for PostgreSQL,
---                  noted in comments where relevant)
--- ============================================================
-
 DROP DATABASE IF EXISTS retail_store;
 CREATE DATABASE retail_store;
 USE retail_store;
 
--- ------------------------------------------------------------
 -- Table: categories
--- ------------------------------------------------------------
+
 CREATE TABLE categories (
     category_id     INT AUTO_INCREMENT PRIMARY KEY,
     category_name   VARCHAR(50) NOT NULL UNIQUE
 );
 
--- ------------------------------------------------------------
 -- Table: products
--- ------------------------------------------------------------
+
 CREATE TABLE products (
     product_id      INT AUTO_INCREMENT PRIMARY KEY,
     product_name    VARCHAR(100) NOT NULL,
@@ -30,9 +20,8 @@ CREATE TABLE products (
     FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
 
--- ------------------------------------------------------------
 -- Table: customers
--- ------------------------------------------------------------
+
 CREATE TABLE customers (
     customer_id     INT AUTO_INCREMENT PRIMARY KEY,
     first_name      VARCHAR(50) NOT NULL,
@@ -42,9 +31,8 @@ CREATE TABLE customers (
     signup_date     DATE NOT NULL
 );
 
--- ------------------------------------------------------------
 -- Table: employees  (store staff who process orders)
--- ------------------------------------------------------------
+
 CREATE TABLE employees (
     employee_id     INT AUTO_INCREMENT PRIMARY KEY,
     full_name       VARCHAR(100) NOT NULL,
@@ -52,9 +40,8 @@ CREATE TABLE employees (
     hire_date       DATE NOT NULL
 );
 
--- ------------------------------------------------------------
 -- Table: orders
--- ------------------------------------------------------------
+
 CREATE TABLE orders (
     order_id        INT AUTO_INCREMENT PRIMARY KEY,
     customer_id     INT NOT NULL,
@@ -66,9 +53,8 @@ CREATE TABLE orders (
     FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
 );
 
--- ------------------------------------------------------------
 -- Table: order_items  (line items inside each order)
--- ------------------------------------------------------------
+
 CREATE TABLE order_items (
     order_item_id   INT AUTO_INCREMENT PRIMARY KEY,
     order_id        INT NOT NULL,
@@ -80,9 +66,8 @@ CREATE TABLE order_items (
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
--- ------------------------------------------------------------
 -- Helpful indexes for common lookups
--- ------------------------------------------------------------
+
 CREATE INDEX idx_orders_customer   ON orders(customer_id);
 CREATE INDEX idx_orders_date       ON orders(order_date);
 CREATE INDEX idx_orderitems_order  ON order_items(order_id);
