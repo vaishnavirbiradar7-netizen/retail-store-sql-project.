@@ -1,5 +1,8 @@
 SQL Portfolio project
 
+## Sample Output
+   [Project running successfully in MySQL Workbench](project_running_screenshot.png)
+
 ## What this project demonstrates
 
 - **Database design**: normalized schema with primary/foreign keys, constraints, and indexes
